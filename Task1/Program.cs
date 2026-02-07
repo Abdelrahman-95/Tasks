@@ -20,16 +20,11 @@
 
             Console.WriteLine("Price per small room: $25");
             Console.WriteLine("Price per large room: $35");
-            Console.WriteLine($"coast: {coast}$");
-            Console.WriteLine($"coast: {taxes}$");
+            Console.WriteLine($"coast: {coast:C0}");
+            Console.WriteLine($"taxes: {taxes:C}");
             Console.WriteLine("================================");
-            Console.WriteLine($"Total estimate: {totalPrice}$ ");
+            Console.WriteLine($"Total estimate: {totalPrice:C} ");
             Console.WriteLine("This estimate is valid for 30 days");
-            Console.WriteLine("================================");
-            int X = 10;
-            int Y = 20;
-            Console.WriteLine($"Equation: {X} + {Y} = {X + Y:C}");
-
         }
     }
 }
