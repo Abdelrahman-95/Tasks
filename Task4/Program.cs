@@ -1,4 +1,6 @@
-﻿namespace Task4
+﻿using System.Diagnostics.Contracts;
+
+namespace Task4
 {
     internal class Program
     {
@@ -84,6 +86,7 @@
                             }
                         }   
                         Console.WriteLine($"The Smallest Number is :{min}");
+                        Console.WriteLine("");
                         break;
                     case 'l':
                     case 'L':
@@ -97,7 +100,23 @@
                             }
                         }
                         Console.WriteLine($"The Largest Number is :{max}");
+                        Console.WriteLine("");
                         break;
+                    case 'c':
+                    case 'C':
+                        Console.Clear();
+                        if (list.Count > 0)
+                        {
+                            list.Clear();
+                            Console.WriteLine("The list has been cleared.");
+                            Console.WriteLine("");
+                        }
+                        else {
+                            Console.WriteLine("The list is already empty.");
+                            Console.WriteLine("");
+                        }
+                            break;
+
 
                     default:
                         Console.Clear ();
