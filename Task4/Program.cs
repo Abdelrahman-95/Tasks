@@ -10,7 +10,6 @@ namespace Task4
             List<int> list = new List<int>();
             do
             {
-                
                 Console.WriteLine("P  - Print Numbers");
                 Console.WriteLine("A  - Add a Numbers");
                 Console.WriteLine("M  - Display mean of the number");
@@ -37,30 +36,28 @@ namespace Task4
                             Console.WriteLine("");
                         }
                             break;
-                    case 'a':
                     case 'A':
+                    case 'a':
                         Console.Clear();
-                        Console.Write("Enter an intger to add: ");
+                        Console.Write("Enter an integer to add: ");
                         int add = Convert.ToInt32(Console.ReadLine());
-                        if (list.Count == 0)
-                        { 
-                            list.Add(add);
-                            Console.WriteLine($"{add} added");
-                        }
-                        else if (list.Count > 0)
+                        bool isDuplicate = false;
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            if (list[i] == add)
                             {
-                            for (int i = 0; i < list.Count; i++)
-                            {
-                                if (list[i] == add)
-                                {
-                                    Console.WriteLine("This Number Is Dublicated");
-                                    break;
-                                }
-                                else {
-                                    list.Add(add);
-                                    Console.WriteLine($"{add} added");
-                                }
+                                isDuplicate = true;
+                                break; 
                             }
+                        }
+                        if (isDuplicate)
+                        {
+                            Console.WriteLine("This Number Is Duplicated!");
+                        }
+                        else
+                        {
+                            list.Add(add);
+                            Console.WriteLine($"{add} added.");
                         }
                         break;
 
@@ -102,6 +99,28 @@ namespace Task4
                         Console.WriteLine($"The Largest Number is :{max}");
                         Console.WriteLine("");
                         break;
+                    case 'f':
+                    case 'F':
+                        Console.Clear();
+                        Console.Write("Enter number to find: ");
+                        int find = Convert.ToInt32(Console.ReadLine());
+
+                        bool isFound = false;
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            if (find == list[i])
+                            {
+                                Console.WriteLine($"index of {find} is {i}");
+                                isFound = true;
+                                break;
+                            }
+                        }
+                        if (!isFound)
+                        {
+                            Console.WriteLine("This Number Was Not Found In The List.");
+                        }
+                            break;
+
                     case 'c':
                     case 'C':
                         Console.Clear();
